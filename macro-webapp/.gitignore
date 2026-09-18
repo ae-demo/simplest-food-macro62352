@@ -1,0 +1,9 @@
+node_modules
+dist
+
+# The sandbox's .git/info/exclude ignores `core.*` (crash-dump artefacts),
+# which incidentally also matches src/authz/core.ts — a real, committed
+# source file from thunder-authentication's copied asset tree. Un-ignore it
+# explicitly so it is not silently dropped from the image (react-webapp's
+# Verify: `git status --ignored=matching`).
+!src/authz/core.ts

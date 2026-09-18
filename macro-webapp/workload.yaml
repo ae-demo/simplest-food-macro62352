@@ -1,0 +1,28 @@
+apiVersion: openchoreo.dev/v1alpha1
+metadata:
+  name: macro-webapp
+
+endpoints:
+  - name: http
+    type: HTTP
+    port: 9090
+    basePath: /
+    visibility:
+      - project
+      - external
+
+dependencies:
+  endpoints:
+    - component: simplest-food-macro62352-macro-api
+      name: http
+      visibility: project
+      envBindings:
+        address: MACRO_API_URL
+  resources:
+    - ref: simplest-food-mac-20ff8e65
+      envBindings:
+        client_id: USER_AUTH_CLIENT_ID
+        issuer: USER_AUTH_ISSUER
+        jwks_url: USER_AUTH_JWKS_URL
+        resource: USER_AUTH_RESOURCE
+        scopes: USER_AUTH_SCOPES
