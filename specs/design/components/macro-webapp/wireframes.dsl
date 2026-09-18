@@ -43,7 +43,7 @@ screen EditFoodEntry "Edit or delete a logged food entry"
 
 screen History "Client's past days of logged food and totals"
   navbar "Macro Tracker"
-  sidebar "Today -> Today | History -> History | Coach access -> CoachAccess"
+  sidebar "Today -> Today | History -> History | Goal -> Goal | Coach access -> CoachAccess"
   heading "History"
   table "Date | Calories | Protein | Carbs | Fat | vs. goal"
     row "2026-09-17 | 1980 | 145g | 210g | 60g | Met goal"
@@ -51,7 +51,7 @@ screen History "Client's past days of logged food and totals"
 
 screen Goal "Set or update the caller's ongoing daily goal"
   navbar "Macro Tracker"
-  sidebar "Today -> Today | History -> History | Coach access -> CoachAccess"
+  sidebar "Today -> Today | History -> History | Goal -> Goal | Coach access -> CoachAccess"
   heading "Daily goal"
   text "Applies to every day until you change it"
   input "Calories"
@@ -64,7 +64,7 @@ screen Goal "Set or update the caller's ongoing daily goal"
 
 screen CoachAccess "Client manages which Coaches can view their data"
   navbar "Macro Tracker"
-  sidebar "Today -> Today | History -> History | Coach access -> CoachAccess"
+  sidebar "Today -> Today | History -> History | Goal -> Goal | Coach access -> CoachAccess"
   row
     heading "Coach access"
     right

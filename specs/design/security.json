@@ -1,0 +1,68 @@
+{
+  "version": 3,
+  "permissions": [
+    {
+      "resource": "food-entries",
+      "component": "macro-api",
+      "description": "A Client's logged food entries",
+      "actions": [
+        { "handle": "read", "description": "The caller's own food entries" },
+        { "handle": "write", "description": "Create, edit and delete the caller's own food entries" },
+        { "handle": "read-granted", "description": "A granting client's food entries, read-only" }
+      ]
+    },
+    {
+      "resource": "daily-goal",
+      "component": "macro-api",
+      "description": "A Client's ongoing daily calorie/macro goal",
+      "actions": [
+        { "handle": "read", "description": "The caller's own daily goal" },
+        { "handle": "write", "description": "Set or update the caller's own daily goal" },
+        { "handle": "read-granted", "description": "A granting client's daily goal, read-only" }
+      ]
+    },
+    {
+      "resource": "progress",
+      "component": "macro-api",
+      "description": "Totals vs. goal for a day",
+      "actions": [
+        { "handle": "read", "description": "The caller's own daily progress" },
+        { "handle": "read-granted", "description": "A granting client's daily progress, read-only" }
+      ]
+    },
+    {
+      "resource": "coach-access",
+      "component": "macro-api",
+      "description": "Grants that let a Coach view a Client's data",
+      "actions": [
+        { "handle": "manage", "description": "Grant and revoke Coach access to the caller's own data" },
+        { "handle": "read", "description": "List the clients who granted the caller (a Coach) access" }
+      ]
+    }
+  ],
+  "groups": [
+    { "name": "Clients", "description": "People who track their own food and macros" },
+    { "name": "Coaches", "description": "People who review a Client's log and goal progress" }
+  ],
+  "roles": [
+    {
+      "name": "Client",
+      "description": "Logs their own food, manages their daily goal, and controls Coach access to their data.",
+      "stories": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "grants": ["food-entries:read", "food-entries:write", "daily-goal:read", "daily-goal:write", "progress:read", "coach-access:manage"],
+      "assignTo": ["Clients"]
+    },
+    {
+      "name": "Coach",
+      "description": "Views, read-only, the log and goal progress of Clients who granted access.",
+      "stories": [11, 12, 13],
+      "grants": ["food-entries:read-granted", "daily-goal:read-granted", "progress:read-granted", "coach-access:read"],
+      "assignTo": ["Coaches"]
+    }
+  ],
+  "testUsers": [
+    { "username": "test-client", "roles": ["Client"] },
+    { "username": "test-client-2", "roles": ["Client"] },
+    { "username": "test-coach", "roles": ["Coach"] }
+  ]
+}
