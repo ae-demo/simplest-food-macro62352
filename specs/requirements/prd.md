@@ -46,8 +46,8 @@ Client's behalf.
 
 - **Sign-in**: every user (Client and Coach) signs in via SSO through Thunder, the platform identity provider — an organization default.
 - **Food entry method**: manual entry only — a Client types the food name and its calories/protein/carbs/fat by hand. No nutrition database lookup or search is used.
-- **Daily goal**: one ongoing daily target per Client (calories, protein, carbs, fat) that applies to every day until the Client changes it — it is not set separately per day. *assumed*
-- **Coach access grant**: a Client grants a Coach access by entering the Coach's existing sign-in email address; no invitation email is sent — the Coach sees the Client appear in their list once granted, next time they sign in. *assumed*
+- **Daily goal**: one ongoing daily target per Client (calories, protein, carbs, fat) that applies to every day until the Client changes it — it is not set separately per day.
+- **Coach access grant**: a Client grants a Coach access by entering the Coach's existing sign-in email address; no invitation email is sent — the Coach sees the Client appear in their list once granted, next time they sign in.
 - **Coach scope**: a Coach may be granted access by any number of Clients, and sees all of them in one list. *assumed*
 - **Notifications**: none — no email, push or other notification channel is part of this product. *assumed*
 
