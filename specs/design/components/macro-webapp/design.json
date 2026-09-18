@@ -1,0 +1,17 @@
+{
+  "name": "macro-webapp",
+  "type": "web-application",
+  "version": "0.1.0",
+  "language": "TypeScript",
+  "buildpack": "docker",
+  "appPath": "macro-webapp",
+  "entrypoint": "deployment/web-application",
+  "exposure": "internet",
+  "dependencies": [
+    { "kind": "component", "name": "macro-api" },
+    { "kind": "platform-resource", "name": "user-auth", "resourceType": "thunder-app" }
+  ],
+  "description": "Single-page React app for both Client and Coach. A Client logs food entries, sets/updates their daily goal, reviews today's and past progress, and manages Coach access grants. A Coach signs in to see the list of Clients who granted them access and view each one's log/goal read-only. Holds no data of its own — all state comes from macro-api.",
+  "stories": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+  "skillsPinned": ["wireframes", "react-webapp", "oxygen-ui-design-system", "thunder-authentication"]
+}

@@ -1,0 +1,15 @@
+title Simplest Food Macro Tracker
+
+component macro-webapp as "Macro Tracker Web App" web-application
+component macro-api as "Macro Tracker API" service
+component macro-db as "Macro Tracker DB" database
+
+east user-auth as "Thunder Auth" identity-server
+
+north -> macro-webapp
+north -> macro-api
+
+macro-webapp -> macro-api
+macro-webapp -> user-auth
+macro-api -> user-auth
+macro-api -> macro-db

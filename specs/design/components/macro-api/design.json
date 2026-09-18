@@ -1,0 +1,17 @@
+{
+  "name": "macro-api",
+  "type": "service",
+  "version": "0.1.0",
+  "language": "Ballerina",
+  "buildpack": "docker",
+  "appPath": "macro-api",
+  "entrypoint": "deployment/service",
+  "exposure": "internet",
+  "dependencies": [
+    { "kind": "platform-resource", "name": "macro-db", "resourceType": "postgres-cnpg" },
+    { "kind": "platform-resource", "name": "user-auth", "resourceType": "thunder-app" }
+  ],
+  "description": "REST API owning food entries, daily goals and coach-access grants. Serves a Client's own log/goal (own-rows reach) and a Coach's read-only view of the Clients who granted them access (via a relation reach). Persists to macro-db. Does not send email or any notification, and does not look up nutrition facts from any external food database — all macro values are entered by the Client.",
+  "stories": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+  "skillsPinned": ["openapi-conventions", "ballerina", "api-management", "thunder-authentication"]
+}
